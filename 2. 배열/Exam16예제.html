@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = [];
+      let odd = [];
+      let j = 0;
+
+      // 초기배열 num에 1 ~ 50 랜덤 수 배정
+      for (var i = 0; i < 10; i++) {
+        num[i] = parseInt((Math.random() * 100) / 2 + 1);
+        console.log(num[i]);
+        // 짝수 제거
+        if (num[i] % 2 == 0) {
+          num.splice(i, 1);
+        }
+      }
+      // 짝수가 제거된 홀수 배열 odd
+      for (var i = 0; i < num.length; i++) {
+        if (num[i] != null) {
+          odd[j] = num[i];
+          j++;
+        }
+      }
+      // 출력
+      console.log("num배열 " + num);
+      console.log("남아있는 수는 " + odd);
+
+      // 2.
+      let num2 = [];
+      // 초기배열 num2에 1 ~ 50 랜덤 수 배정
+      for (var i = 0; i < 10; i++) {
+        num2[i] = parseInt((Math.random() * 100) / 2 + 1);
+        console.log(num2[i]);
+      }
+
+      // 짝수 제거
+      for (let k = 0; k < num2.length; k++) {
+        if (num2[k] % 2 == 0) {
+          num2.splice(k, 1);
+          k--; // splice가 삭제하고 인덱스 채우므로 k 다시 감소시켜줌
+        }
+      }
+      // 출력
+      console.log("num2배열 " + num2);
+    </script>
+  </body>
+</html>
