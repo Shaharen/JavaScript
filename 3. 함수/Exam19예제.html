@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 넓이와 높이 입력 받아 직사각형의 면적 출력
+
+      const getRectArea = function getRectArea(num1, num2) {
+        return num1 * num2;
+      };
+
+      let num1 = parseInt(prompt("가로의 길이를 입력하세요", "가로의 길이"));
+      let num2 = parseInt(prompt("세로의 길이를 입력하세요", "세로의 길이"));
+
+      console.log("직사각형의 면적 >> ", getRectArea(num1, num2));
+
+      // const 써준 이유
+      // let, var 사용했을 때 -> 다른 값을 넣어주면 기능 사용 불가
+      getRectArea = 10; // const라서 영향 못줌
+    </script>
+  </body>
+</html>
