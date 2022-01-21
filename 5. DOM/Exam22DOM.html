@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="text">Hello JavaScript</p>
+    <button id="btn" onclick="change()">클릭</button>
+
+    <script>
+      // 버튼이 클릭 되었을때 p태그의 글자 색깔 변경
+      // 1. 버튼 태그를 자바스크립트의 객체로 가져와야함
+      let btn = document.getElementById("btn");
+      let p = document.getElementById("text");
+
+      console.log(p);
+
+      //   btn.addEventListener("click", function () {
+      //     p.style.color = "#C00000";
+      //   });
+      function change() {
+        p.style.color = "#C00000";
+        // p 태그의 글씨 크기를 바꿔주세요
+        p.style.fontSize = "25px";
+      }
+      // 최종적으로 아래에 있는게 적용됨
+      //   function change() {
+      //     p.style.color = "#00FF00";
+      //   }
+    </script>
+  </body>
+</html>
