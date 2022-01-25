@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- j쿼리 임포트-->
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+      #text1 {
+        background-color: aliceblue;
+        font-size: 200px;
+      }
+    </style>
+    <!-- 이쪽으로 아래 스크립트를 옮길경우 적용이 안됨
+    -> 태그들이 생성되지 않은 상태에서 실행시킨것으로 되어
+    자바스크립트에 대한 내용이 적용되지 않음-->
+    <script>
+      // 무조건 위에 작성하면 실행되지 않나요? X
+      // 문서를 가져와서 준비(ready())가 됬다면
+      // function() 어떤 기능을 실행시켜주세요
+      $(document).ready(function () {
+        let h1 = document.getElementById("text1");
+
+        // h1.style.color = "red";
+
+        // jQuery
+        // $("선택자") --> 웹페이지를 구성하는 요소(태그)
+        // 제이쿼리의 객체로 가져옴
+        // --> $("h1").style.color = "red"; 가 안먹힘
+        // --> 제이쿼리의 문법이 아니기 때문
+        $("h1").css("color", "red");
+        // h1 태그에 대한 내용을 --> 모레도 토요일이였으면
+        $("h1").text("모레도 토요일이였으면");
+        // h1태그를 a태그로 변경
+        // $("h1").html("<a href = '#'>jQuery</a>");
+
+        // 글씨 크기를 200px h1태그의 배경색을 orange로 바꾸고 싶어요
+        $("h1").css("font-size", "200px").css("background-color", "#191970");
+        $("h1").text("조용조용").css("color", "#ffffff");
+
+        $("h1").css({
+          color: "#0000CC",
+          fontSize: "100px",
+          "background-color": "#bb00bb",
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="text1">내일은 드디어 토요일!</h1>
+  </body>
+</html>

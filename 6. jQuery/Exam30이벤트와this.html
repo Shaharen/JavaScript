@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>jQuery Click</h1>
+
+    <h1>This 키워드</h1>
+
+    <script>
+      // $("h1").on("mouseover", function () {
+      //   $("h1").css("color", "#C00000");
+      // });
+
+      // // h1 태그를 벗어난다면 색깔이 원래대로 돌아오게 해주세요!
+      // $("h1").on("mouseout", function () {
+      //   $("h1").css("color", "");
+      // });
+      // // h1 태그를 클릭했을때 내용을 까치까치설날로 변경
+      // // innerText == .text()
+      // $("h1").on("click", function () {
+      //   $("h1").text("까치까치설날");
+      // });
+
+      // 이벤트 한번에 적용
+      // this --> 선택한 요소만 적용이 되도록
+      // 호출된 HTML객체가 저장되는 변수(실행주체)
+      // 사용자가 선택한 요소 하나만 저장이 되는 변수
+      // 실행된 내용에 따라 this 에 적용되는 값이 자동으로 변한다.
+      $("h1").on({
+        click: function () {
+          $(this).text("한번에 적용");
+        },
+        mouseover: function () {
+          $(this).css("color", "#ff0000");
+        },
+        mouseout: function () {
+          $(this).css("color", "#191970");
+        },
+      });
+    </script>
+  </body>
+</html>

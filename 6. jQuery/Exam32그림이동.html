@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="moveImgStyle.css" />
+    <script src="jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="bg">
+      <img src="horse.png" />
+      <button class="btn left" onclick="leftMove()">LEFT</button>
+      <button class="btn right" onclick="rightMove()">RIGHT</button>
+    </div>
+
+    <script>
+      let pos = 0;
+      function leftMove() {
+        if (pos < 1200) {
+          pos += 100;
+        }
+        $("img").css("right", pos + "px");
+        $("img").css("transform", "scalex(1)");
+      }
+
+      function rightMove() {
+        if (pos > 0) {
+          pos -= 100;
+        }
+        $("img").css("right", pos + "px");
+        $("img").css("transform", "scalex(-1)");
+      }
+
+      //   let cnt = 0;
+
+      //   $("button.btn.left").on("click", function () {
+      //     cnt += 100;
+      //     $("img").css("right", cnt);
+      //   });
+      //   $("button.btn.right").on("click", function () {
+      //     cnt -= 100;
+      //     $("img").css("left", 1200 - cnt);
+      //   });
+    </script>
+  </body>
+</html>

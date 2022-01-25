@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>this 사용해보기</h1>
+
+    <h3>날 클릭 할꼬얌???</h3>
+    <h3>날 클릭 할꼬얌???</h3>
+    <h3>날 클릭 할꼬얌???</h3>
+    <h3>날 클릭 할꼬얌???</h3>
+    <h3>날 클릭 할꼬얌???</h3>
+
+    <script>
+      $("h3").on({
+        click: function () {
+          $(this).text("클릭됨 ㅠㅠ");
+          $(this).css("color", "#ABCDEF");
+          $(this).css("background-color", "#112200");
+        },
+      });
+    </script>
+  </body>
+</html>
