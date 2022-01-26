@@ -9,11 +9,20 @@
   </head>
   <body>
     <h1>json 데이터를 가져와보자</h1>
+    <table border="1" id="start">
+      <tr>
+        <td>순위</td>
+        <td>영화명</td>
+        <td>개봉일</td>
+      </tr>
+    </table>
+
     <button>정보 가져오기</button>
 
     <script>
       // 버튼이 클릭 되었을 때 ajax 사용해서
       // 영화진흥위원회 json 데이터 가져오기
+
       $("button").on("click", function () {
         $.ajax({
           // 통신 위치
@@ -27,6 +36,24 @@
             console.log(res.boxOfficeResult.boxofficeType);
             // 첫번째 영화 제목
             console.log(res.boxOfficeResult.dailyBoxOfficeList[0].movieNm);
+
+            let array = res.boxOfficeResult.dailyBoxOfficeList;
+
+            for (var i = 0; i < array.length; i++) {
+              $("#start").append(
+                "<tr>" +
+                  "<td>" +
+                  array[i].rank +
+                  "</td>" +
+                  "<td>" +
+                  array[i].movieNm +
+                  "</td>" +
+                  "<td>" +
+                  array[i].openDt +
+                  "</td>" +
+                  "</tr>"
+              );
+            }
           },
           // 실패했다면
           error: function () {
